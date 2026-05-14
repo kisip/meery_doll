@@ -30,7 +30,7 @@ body{background:var(--red5);color:var(--dark);font-family:'Nunito',sans-serif;ov
 @keyframes confFall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
 /* FLOATING MESSAGE */
-.float-msg{position:fixed;left:50%;transform:translateX(-50%);top:80px;z-index:998;background:var(--red);color:#fff;font-family:'Pacifico',cursive;font-size:1.1rem;padding:.7rem 2rem;border-radius:100px;box-shadow:0 8px 30px rgba(232,53,74,.4);animation:msgPop .5s cubic-bezier(.175,.885,.32,1.275) forwards;pointer-events:none;white-space:nowrap}
+.float-msg{position:fixed;left:50%;transform:translateX(-50%);top:80px;z-index:998;background:var(--red);color:#fff;font-family:'Pacifico',cursive;font-size:1.1rem;padding:.7rem 2rem;border-radius:24px;box-shadow:0 8px 30px rgba(232,53,74,.4);animation:msgPop .5s cubic-bezier(.175,.885,.32,1.275) forwards;pointer-events:none;width:max-content;max-width:min(92vw,720px);text-align:center;line-height:1.35;overflow-wrap:anywhere}
 @keyframes msgPop{0%{opacity:0;transform:translateX(-50%) scale(.6) translateY(20px)}60%{transform:translateX(-50%) scale(1.08) translateY(-8px)}100%{opacity:1;transform:translateX(-50%) scale(1) translateY(0)}}
 .float-msg.hide{animation:msgFade .4s ease forwards}
 @keyframes msgFade{to{opacity:0;transform:translateX(-50%) translateY(-20px)}}
@@ -139,7 +139,7 @@ footer p{font-size:.8rem;color:var(--muted)}
 
   <button class="merry-btn" id="mainBtn" onclick="merryClick()">
     <span class="btn-spark">✦</span>
-    Merry Dolleee
+    Open Meery Doll
     <span class="btn-spark">✦</span>
   </button>
 
@@ -217,6 +217,7 @@ footer p{font-size:.8rem;color:var(--muted)}
 <script>
 let count = 0;
 const messages = [
+  {icon:'🎀', text:'<span>Helloo meery doll sugam anoooo sundharaaaaaaaaaaaaa!</span>'},
   {icon:'🎀', text:'<span>Hello Merry Dolleeee!</span> Welcome to the magic!'},
   {icon:'✨', text:'<span>Sugam Anoooooo!</span> The dolls are dancing for you!'},
   {icon:'🪆', text:'So many <span>Merrys</span> and <span>Dolls</span> just for you!'},
@@ -269,7 +270,7 @@ function addMessage(n){
 function showFloatMsg(n){
   const old = document.querySelector('.float-msg');
   if(old) old.remove();
-  const texts = ['Hello Merry Dolleeee! 🎀','Sugam Anoooooo! 💖','Merry Merry Merry! ✨','Dolls everywhere! 🪆','So much Merry! 🌹'];
+  const texts = ['Helloo meery doll sugam anoooo sundharaaaaaaaaaaaaa! 🎀'];
   const d = document.createElement('div');
   d.className = 'float-msg';
   d.textContent = texts[n % texts.length];
